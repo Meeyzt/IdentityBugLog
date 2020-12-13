@@ -10,18 +10,18 @@ using System.Threading.Tasks;
 
 namespace IdentityBugLog.Controllers
 {
-    public class AdminController : Controller
+    public class AdministrationController : Controller
     {
         private UserManager<UserIdentity> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AdminController(UserManager<UserIdentity> userManager, RoleManager<IdentityRole> roleManager)
+        public AdministrationController(UserManager<UserIdentity> userManager, RoleManager<IdentityRole> roleManager)
         {
             _roleManager = roleManager;
             _userManager = userManager;
         }
 
-        public ViewResult Index() => View(_roleManager.Roles);
+        public ViewResult Index() => View();
 
 
         public IActionResult Create() => View();
